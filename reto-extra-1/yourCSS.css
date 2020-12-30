@@ -5,8 +5,65 @@ Colors:
   Yellow: #F3AC3C
   Dark Yellow: #998235
 */
+:root {
+  --unit: 10px;
+  --border-radius: calc(var(--unit) / 2);
+
+  --main-color: #f3ac3c;
+  --second-color: #998235;
+}
 .bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 400px;
   height: 300px;
-  background: #1a4341;
+
+  background-color: #1a4341;
+  z-index: 0;
+}
+.challenge {
+  position: relative;
+
+  width: calc(var(--unit) * 10);
+  height: calc(var(--unit) * 10);
+
+  background-color: var(--main-color);
+  background-image: 
+    /* Círculo grande */
+  radial-gradient(circle at calc(var(--unit) * 3.5) calc(var(--unit) * 3.5), var(--second-color) calc(var(--unit) * 1.5), transparent 0),
+
+    /* Círculo mediano */
+  radial-gradient(circle at calc(var(--unit) * 5) calc(var(--unit) * 7.5), var(--second-color) var(--unit), transparent 0),
+
+    /* Círculo pequeño */
+  radial-gradient(circle at calc(var(--unit) * 7) calc(var(--unit) * 2), var(--second-color) calc(var(--unit) * .5), transparent 0);
+
+  border-radius: 50%;
+}
+.stone-in-shoe,
+.challenge::before,
+.challenge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+
+  width: var(--unit);
+  height: 180%;
+
+  background-color: inherit;
+  border-radius: var(--border-radius);
+
+  z-index: -1;
+}
+.challenge::before {
+  transform: translate(-50%);
+}
+.challenge::after {
+  transform: rotate(60deg) translate(calc(var(--unit) / 2));
+}
+.stone-in-shoe {
+  transform: rotate(120deg) translate(var(--unit), calc(var(--unit) * -1));
 }
