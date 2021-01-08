@@ -6,32 +6,51 @@ Colors:
   Yellow:#F9E492
 */
 :root {
-  --unit: 10px;
+    --unit: 10px;
 
-  --blue: #4f77ff;
-  --yellow: #f9e492;
-  --bg-color: #19191a;
+    --blue: #4f77ff;
+    --yellow: #f9e492;
+    --bg-color: #19191a;
 }
 .bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
 
-  background-color: #19191a;
+    background-color: #19191a;
 }
 .challenge {
-  width: calc(var(--unit) * 20);
-  height: calc(var(--unit) * 20);
+    width: calc(var(--unit) * 20);
+    height: calc(var(--unit) * 20);
 
-  background: 
-  radial-gradient(100px circle at 100% 75%, var(--blue) 50%, transparent 50%) 0 100% / 50% no-repeat,
-  linear-gradient(0, var(--bg-color) 50%, transparent 50%) 0 0 / 50% no-repeat,
-  radial-gradient(100px circle at 0 25%, var(--blue) 50%, transparent 50%) 100% 100% / 50% no-repeat,
-  linear-gradient(180deg, var(--bg-color) 50%, transparent 50%) 100% 0 / 50% no-repeat,
-  radial-gradient(100px circle at 50% 50%, var(--yellow) 50%, transparent 50%) 100% 100% / 50% no-repeat,
-  linear-gradient(90deg, transparent 50%, var(--bg-color) 50%) 0 0 / 100% no-repeat,
-  linear-gradient(0, var(--bg-color) 50%, transparent 50%) 0 50% / 50% no-repeat,
-  radial-gradient(100px circle at 25% 50%, var(--yellow) 50%, transparent 50%) 0 100% / 100% no-repeat;
+    background: radial-gradient(
+                100px circle at 100% 75%,
+                var(--blue) 50%,
+                transparent 50%
+            )
+            0 100% / 50% no-repeat,
+        linear-gradient(0, var(--bg-color) 50%, transparent 50%) 0 0 / 50%
+            no-repeat,
+        radial-gradient(100px circle at 0 25%, var(--blue) 50%, transparent 50%)
+            100% 100% / 50% no-repeat,
+        linear-gradient(180deg, var(--bg-color) 50%, transparent 50%) 100% 0 /
+            50% no-repeat,
+        radial-gradient(
+                100px circle at 50% 50%,
+                var(--yellow) 50%,
+                transparent 50%
+            )
+            100% 100% / 50% no-repeat,
+        linear-gradient(90deg, transparent 50%, var(--bg-color) 50%) 0 0 / 100%
+            no-repeat,
+        linear-gradient(0, var(--bg-color) 50%, transparent 50%) 0 50% / 50%
+            no-repeat,
+        radial-gradient(
+                100px circle at 25% 50%,
+                var(--yellow) 50%,
+                transparent 50%
+            )
+            0 100% / 100% no-repeat;
 }

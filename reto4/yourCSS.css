@@ -6,8 +6,48 @@ Colors:
   Rectangle:#F9E492
   Union: #9AD5FF
 */
+:root {
+    --unit: 10px;
+    --bg_circle: #4f77ff;
+    --bg_rectangle: #f9e492;
+    --bg_union: #9ad5ff;
+}
+
 .bg {
-  width: 400px;
-  height: 300px;
-  background-color: #19191a;
+    width: 400px;
+    height: 300px;
+    background-color: #19191a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge {
+    position: relative;
+    top: calc(var(--unit) * -2.5);
+
+    width: calc(var(--unit) * 15);
+    height: calc(var(--unit) * 15);
+
+    background-color: var(--bg_circle);
+    border-radius: 50%;
+}
+
+.challenge::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: calc(var(--unit) * 7.5);
+    height: calc(var(--unit) * 12.5);
+
+    background-color: var(--bg_rectangle);
+    background-image: radial-gradient(
+        circle at top right,
+        var(--bg_union) calc(var(--unit) * 7.5),
+        transparent calc(var(--unit) * 7.5)
+    );
+
+    z-index: 1;
 }
